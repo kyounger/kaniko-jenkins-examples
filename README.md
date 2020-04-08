@@ -1,3 +1,7 @@
+# Jenkins kaniko examples for building images in kubernetes
+
+Available are both declarative and scripted options, and using k8s secrets or Jenkins Credentials for storing config.json docker credentials.
+
 ## How to store crendentials for kaniko to use to push image
 
 ### How to create a kubernetes secret with docker credentials
