@@ -3,6 +3,7 @@ pipeline {
         kubernetes {
             defaultContainer 'kaniko'
             yaml """
+apiVersion: v1
 kind: Pod
 metadata:
   name: kaniko

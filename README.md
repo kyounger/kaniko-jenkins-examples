@@ -13,7 +13,16 @@ kubectl create secret docker-registry docker-credentials \
     --docker-email=""
 ```
 
-### How to create a Jenkins secret file that contains config.json
+### Create config.json for use elsewhere
+You can use the same kubectl command and just use it locally to generate the file via --dry-run
+```
+kubectl create secret docker-registry docker-credentials \
+    --docker-username=""  \
+    --docker-password="" \
+    --docker-email="" --dry-run=client -o jsonpath='{.data.\.dockerconfigjson}' | base64 -D > config.json
+```
+
+### How to add config.json as secret file credential
 1. Navigate to credentials
 2. Navigate to your domain
 3. Add Credentials
